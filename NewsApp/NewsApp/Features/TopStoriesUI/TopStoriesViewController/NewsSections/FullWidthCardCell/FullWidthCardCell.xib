@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FullWidthCardCell" id="HuB-VC-kBi" customClass="FullWidthCardCell" customModule="TopStoriesUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="267" height="197"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gRk-cG-49f">
+                <rect key="frame" x="0.0" y="0.0" width="267" height="197"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-IR-xFu">
+                        <rect key="frame" x="8" y="4" width="251" height="189"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-96-gu0">
+                                <rect key="frame" x="0.0" y="0.0" width="251" height="189"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O5w-TM-Afb">
+                                <rect key="frame" x="8" y="105.5" width="235" height="75.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twl-1s-3lg">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cif-0n-gde">
+                                        <rect key="frame" x="0.0" y="58" width="235" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-03-I2j">
+                                        <rect key="frame" x="0.0" y="66" width="235" height="9.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O5w-TM-Afb" firstAttribute="height" secondItem="K2v-IR-xFu" secondAttribute="height" multiplier="0.4" id="1nq-jA-CIo"/>
+                            <constraint firstItem="O5w-TM-Afb" firstAttribute="leading" secondItem="K2v-IR-xFu" secondAttribute="leading" constant="8" id="KqS-Gn-jzd"/>
+                            <constraint firstAttribute="bottom" secondItem="O5w-TM-Afb" secondAttribute="bottom" constant="8" id="P9N-ES-sAx"/>
+                            <constraint firstAttribute="bottom" secondItem="4Zz-96-gu0" secondAttribute="bottom" id="bUy-au-uKu"/>
+                            <constraint firstAttribute="trailing" secondItem="4Zz-96-gu0" secondAttribute="trailing" id="bXT-Kl-BxH"/>
+                            <constraint firstAttribute="trailing" secondItem="O5w-TM-Afb" secondAttribute="trailing" constant="8" id="dkx-Rc-mOt"/>
+                            <constraint firstItem="4Zz-96-gu0" firstAttribute="leading" secondItem="K2v-IR-xFu" secondAttribute="leading" id="hTb-21-WGo"/>
+                            <constraint firstItem="4Zz-96-gu0" firstAttribute="top" secondItem="K2v-IR-xFu" secondAttribute="top" id="tab-pL-S0c"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K2v-IR-xFu" firstAttribute="top" secondItem="gRk-cG-49f" secondAttribute="top" constant="4" id="XSh-Tt-SuT"/>
+                    <constraint firstAttribute="bottom" secondItem="K2v-IR-xFu" secondAttribute="bottom" constant="4" id="eMS-1I-11L"/>
+                    <constraint firstItem="K2v-IR-xFu" firstAttribute="leading" secondItem="gRk-cG-49f" secondAttribute="leading" constant="8" id="uHa-N0-oFc"/>
+                    <constraint firstAttribute="trailing" secondItem="K2v-IR-xFu" secondAttribute="trailing" constant="8" id="xBy-nC-hSI"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="267" height="197"/>
+            <connections>
+                <outlet property="newsContentView" destination="K2v-IR-xFu" id="Uk3-MF-lOK"/>
+                <outlet property="newsImageView" destination="4Zz-96-gu0" id="8z5-Ie-8VS"/>
+                <outlet property="timestampLabel" destination="4Cm-03-I2j" id="AbY-F2-JKl"/>
+                <outlet property="titleLabel" destination="cif-0n-gde" id="ahD-EV-ooC"/>
+            </connections>
+            <point key="canvasLocation" x="29.710144927536234" y="119.53125"/>
+        </collectionViewCell>
+    </objects>
+</document>
