@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531C2C492440EA3800A51441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531C2C482440EA3800A51441 /* Assets.xcassets */; };
 		531DDDD9243CB1E50096EC9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DDDD8243CB1E50096EC9D /* AppDelegate.swift */; };
 		531DDDDB243CB1E50096EC9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DDDDA243CB1E50096EC9D /* SceneDelegate.swift */; };
 		531DDDDD243CB1E50096EC9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DDDDC243CB1E50096EC9D /* MainViewController.swift */; };
@@ -135,6 +136,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		531C2C482440EA3800A51441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		531DDDD5243CB1E50096EC9D /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		531DDDD8243CB1E50096EC9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		531DDDDA243CB1E50096EC9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				531DDF4F243CBE630096EC9D /* NewsTestUtil.swift */,
 				531DDF00243CBB710096EC9D /* NewsShared.h */,
 				531DDF01243CBB710096EC9D /* Info.plist */,
+				531C2C482440EA3800A51441 /* Assets.xcassets */,
 			);
 			path = NewsShared;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531C2C492440EA3800A51441 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

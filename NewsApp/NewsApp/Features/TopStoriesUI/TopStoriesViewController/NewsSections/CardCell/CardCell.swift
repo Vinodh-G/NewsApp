@@ -38,10 +38,14 @@ class CardCell: UICollectionViewCell {
          newsImageView.image = nil
      }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentShadowView.addShadow(cornerRadius: CardCell.cornerRadius)
+    }
+
     func configureView() {
         newsContentView.layer.cornerRadius = CardCell.cornerRadius
         newsContentView.layer.masksToBounds = true
-        contentShadowView.addShadow(cornerRadius: CardCell.cornerRadius)
 
         contentView.backgroundColor = AppColor.defaultBackgroundColor
         titleLabel.textColor = AppColor.defaultTitleTextColor

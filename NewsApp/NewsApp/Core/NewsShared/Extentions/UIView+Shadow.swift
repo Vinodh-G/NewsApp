@@ -21,6 +21,7 @@ public extension UIView {
         layer.shadowRadius = shadowRadius
         layer.shadowColor = shadowColor.cgColor
         layer.cornerRadius = cornerRadius
-//        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+        layer.shouldRasterize = true
     }
 }

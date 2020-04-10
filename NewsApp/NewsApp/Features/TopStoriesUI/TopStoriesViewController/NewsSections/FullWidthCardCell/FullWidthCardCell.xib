@@ -19,7 +19,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-IR-xFu">
                         <rect key="frame" x="8" y="4" width="251" height="189"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-96-gu0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-96-gu0">
                                 <rect key="frame" x="0.0" y="0.0" width="251" height="189"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O5w-TM-Afb">
@@ -79,4 +79,7 @@
             <point key="canvasLocation" x="29.710144927536234" y="119.53125"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="placeholder" width="512" height="512"/>
+    </resources>
 </document>

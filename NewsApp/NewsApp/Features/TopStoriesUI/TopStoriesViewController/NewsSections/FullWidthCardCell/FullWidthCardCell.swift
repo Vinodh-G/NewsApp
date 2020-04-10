@@ -13,11 +13,11 @@ class FullWidthCardCell: UICollectionViewCell {
 
     public static let newsItemCellID = String(describing: FullWidthCardCell.self)
 
-    @IBOutlet weak var newsContentView: UIView!
-    @IBOutlet weak var newsImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timestampLabel: UILabel!
-    var gradientBackground: CAGradientLayer!
+    @IBOutlet private weak var newsContentView: UIView!
+    @IBOutlet private weak var newsImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var timestampLabel: UILabel!
+    var gradientBackground: CAGradientLayer = CAGradientLayer()
     
     var cellModel: NewsCellViewAPI? {
         didSet {
@@ -30,12 +30,12 @@ class FullWidthCardCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = AppColor.defaultBackgroundColor
-        setUpGradiantBackground()
+        newsContentView.layer.insertSublayer(gradientBackground, above: newsImageView.layer)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        gradientBackground.frame = newsImageView.bounds
+        setUpGradiantBackground()
     }
 
     override func prepareForReuse() {
@@ -43,7 +43,7 @@ class FullWidthCardCell: UICollectionViewCell {
         newsImageView.image = nil
     }
 
-    func configureCell(for cellModel: NewsCellViewAPI) {
+    private func configureCell(for cellModel: NewsCellViewAPI) {
         if let imageUrl = cellModel.imageURL(size: .medium) {
             newsImageView.setImageFrom(imageURLString: imageUrl)
         }
@@ -51,18 +51,17 @@ class FullWidthCardCell: UICollectionViewCell {
         timestampLabel.text = cellModel.timeStamp
     }
 
-    func configureUI() {
+    private func configureUI() {
         titleLabel.textColor = AppColor.highlightTitleTextColor
         timestampLabel.textColor = AppColor.highlighttimeStampTextColor
     }
 
+
     private func setUpGradiantBackground() {
-        gradientBackground = CAGradientLayer()
-        gradientBackground.frame = newsImageView.frame
+        gradientBackground.frame = newsContentView.bounds
         gradientBackground.colors = [UIColor.clear.cgColor,
                                      UIColor.black.withAlphaComponent(0.9).cgColor]
         gradientBackground.startPoint = CGPoint(x: 0, y: 0.5)
         gradientBackground.endPoint = CGPoint(x: 0, y: 1)
-        newsContentView.layer.insertSublayer(gradientBackground, above: newsImageView.layer)
     }
 }
