@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "v0.1",
+  "commitish" : "v0.3",
   "iOS" : [
     {
       "name" : "VSCollectionKit",
-      "hash" : "472c3773ceb190e26567172eae8c04fbe0509a6fd12ed30a5e8a24a5757a4639"
+      "hash" : "8a287ef90c997469e3f3364fe14ac864d74c5a41170937aef8218ccca0f0491d"
     }
   ]
 }

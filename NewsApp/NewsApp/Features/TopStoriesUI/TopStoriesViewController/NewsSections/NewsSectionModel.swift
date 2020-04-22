@@ -19,14 +19,14 @@ struct NewsSectionModel: SectionModel {
     var items: [CellModel] = []
     let categoryName: String
     let categoryType: String
-
+    let sectionID: String
     init(categoryType: String,
          categoryName: String,
          newsItems: [NewsPageResponse.NewsItem]) {
         self.categoryName = categoryName
         self.categoryType = categoryType
         header = NewsHeaderModel(title: categoryName)
-
+        sectionID = UUID().uuidString
         if let cellType = NewsCellType(rawValue: NewsLayoutHandler.layoutType(for: categoryType).rawValue) {
             newsItems.forEach { (newsItem) in
                 items.append(NewsCellModel(cellType: cellType,

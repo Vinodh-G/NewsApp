@@ -29,6 +29,13 @@ class TopStoriesViewController: VSCollectionViewController {
 
     var viewModel: TopStoriesViewAPI?
 
+    override func willAddSectionControllers() {
+        super.willAddSectionControllers()
+        sectionHandler.addSectionHandler(handler: LoadingSectionHandler())
+        sectionHandler.addSectionHandler(handler: newsSectionHandler())
+        sectionHandler.addSectionHandler(handler: errorSectionHandler())
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         observeViewModelUpdates()
@@ -42,13 +49,10 @@ class TopStoriesViewController: VSCollectionViewController {
         super.viewDidAppear(animated)
     }
 
-    lazy var sectionHandler: VSCollectionViewSectionHandller  = {
-        let sectionHandler = VSCollectionViewSectionHandller()
-        sectionHandler.addSectionHandler(handler: LoadingSectionHandler())
-        sectionHandler.addSectionHandler(handler: newsSectionHandler())
-        sectionHandler.addSectionHandler(handler: errorSectionHandler())
-        return sectionHandler
-    }()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 
     func newsSectionHandler() -> SectionHandler {
         return NewsSectionHandler(parentViewController: self.parent)
@@ -58,34 +62,7 @@ class TopStoriesViewController: VSCollectionViewController {
         return ErrorSectionHandler(viewModel: viewModel as? TopStoriesViewRetryAction)
     }
 
-    override func configureDataSource() {
-        super.configureDataSource()
-        dataProvider = VSCollectionViewDataSource(collectionView: collectionView,
-                                                  sectionHandler: sectionHandler)
-    }
-
-    override func configureDelegate() {
-        super.configureDelegate()
-        delegateHandler = VSCollectionViewDelegate(collectionView: collectionView,
-                                                   sectionHandler: sectionHandler)
-    }
-
-    override func configureLayoutProvider() {
-        super.configureLayoutProvider()
-        layoutProvider = VSCollectionViewLayoutProvider(collectionView: collectionView,
-                                                        sectionHandler: sectionHandler)
-    }
-
     override func configureCollectionView() {
-
-        collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] (section, enviroment) -> NSCollectionLayoutSection? in
-            guard let viewModel = self?.viewModel,
-                let sectionModel = viewModel.collectionViewData?.sections[section] else { return nil }
-
-            return self?.layoutProvider?.collectionLayout(for: sectionModel,
-                                                          environment: enviroment)
-
-        })
         super.configureCollectionView()
         collectionView.backgroundColor =  AppColor.defaultBackgroundColor
     }
@@ -98,12 +75,8 @@ class TopStoriesViewController: VSCollectionViewController {
     private func observeViewModelUpdates() {
         viewModel?.viewUpdateHandler = { [weak self] (collectionData, errrMessage) in
             guard let self = self else { return }
-            guard let collectionViewData = collectionData,
-                let dataSource = self.dataProvider,
-                let delgateHandler = self.delegateHandler else { return }
-            dataSource.apply(data: collectionViewData,
-                             animated: true)
-            delgateHandler.data = collectionViewData
+            guard let collectionViewData = collectionData else { return }
+            self.apply(collectionData: collectionViewData, animated: true)
         }
     }
 }
@@ -111,7 +84,7 @@ class TopStoriesViewController: VSCollectionViewController {
 extension TopStoriesViewController {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (context) in
-            self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
         }, completion: nil)
     }
 }

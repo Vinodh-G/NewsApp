@@ -15,8 +15,10 @@ struct ErrorSectionModel: SectionModel {
 
     var header: HeaderViewModel? = nil
     var items: [CellModel]
-
+    let sectionID: String
+    
     init(errorMessage: String, actionTitle: String) {
         items = [ErrorCellModel(errorMessage: errorMessage, actionTitle: actionTitle)]
+        sectionID = UUID().uuidString
     }
 }

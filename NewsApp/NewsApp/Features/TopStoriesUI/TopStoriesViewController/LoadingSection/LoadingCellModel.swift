@@ -10,7 +10,12 @@ import Foundation
 import VSCollectionKit
 
 struct LoadingCellModel: CellModel {
+    var cellID: String
     var cellType: String {
         return NewsCellType.loadingskeleton.rawValue
+    }
+
+    init() {
+        cellID = UUID().uuidString
     }
 }

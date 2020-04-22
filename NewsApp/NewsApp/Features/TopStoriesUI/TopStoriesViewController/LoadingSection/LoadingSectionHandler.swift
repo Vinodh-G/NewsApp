@@ -33,8 +33,8 @@ class LoadingSectionHandler: SectionHandler {
 }
 
 extension LoadingSectionHandler {
-    func collectionLayout(for sectionModel: SectionModel,
-                          environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
+
+    func sectionLayoutProvider(_ sectionModel: SectionModel, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
 
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))

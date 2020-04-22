@@ -10,9 +10,9 @@ import UIKit
 
 public class VSCollectionViewDelegate: NSObject, UICollectionViewDelegate {
 
-    private var collectionView: UICollectionView
+    unowned private var collectionView: UICollectionView
     public var data: VSCollectionViewData?
-    private var sectionHandler: VSCollectionViewSectionHandller
+    unowned private var sectionHandler: VSCollectionViewSectionHandller
 
     public init(collectionView: UICollectionView,
          sectionHandler: VSCollectionViewSectionHandller) {
@@ -26,6 +26,16 @@ public class VSCollectionViewDelegate: NSObject, UICollectionViewDelegate {
                                 forSupplementaryViewOfKind: "section-header-element-kind",
                                 withReuseIdentifier: "EmptyView")
         sectionHandler.registerCells(for:  collectionView)
+    }
+
+    public func collectionView(_ collectionView: UICollectionView,
+                               willDisplay cell: UICollectionViewCell,
+                               forItemAt indexPath: IndexPath) {
+        guard let collectionData = data else { return }
+        sectionHandler.willDisplayCell(collectionView: collectionView,
+                                       indexPath: indexPath,
+                                       cell: cell,
+                                       sectionModel: collectionData.sections[indexPath.section])
     }
 
     public func collectionView(_ collectionView: UICollectionView,

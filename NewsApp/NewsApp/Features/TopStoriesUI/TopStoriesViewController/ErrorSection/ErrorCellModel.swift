@@ -15,8 +15,10 @@ struct ErrorCellModel: CellModel {
 
     let errorMessage: String
     let actionTitle: String
+    let cellID: String
     init(errorMessage: String, actionTitle: String) {
         self.errorMessage = errorMessage
         self.actionTitle = actionTitle
+        cellID = UUID().uuidString
     }
 }

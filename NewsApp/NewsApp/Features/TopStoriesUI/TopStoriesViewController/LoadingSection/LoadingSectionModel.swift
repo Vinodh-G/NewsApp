@@ -15,8 +15,9 @@ struct LoadingSectionModel: SectionModel {
     }
     var header: HeaderViewModel?
     var items: [CellModel] = []
-
+    let sectionID: String
     init() {
         items.append(LoadingCellModel())
+        sectionID = UUID().uuidString
     }
 }

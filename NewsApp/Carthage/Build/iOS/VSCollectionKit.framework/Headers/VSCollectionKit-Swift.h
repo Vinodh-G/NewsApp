@@ -228,6 +228,7 @@ SWIFT_CLASS("_TtC15VSCollectionKit26VSCollectionViewDataSource")
 
 SWIFT_CLASS("_TtC15VSCollectionKit24VSCollectionViewDelegate")
 @interface VSCollectionViewDelegate : NSObject <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

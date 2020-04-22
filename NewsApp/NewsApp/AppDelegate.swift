@@ -8,16 +8,15 @@
 
 import Plugin
 import TopStoriesUI
+import NewsDetailUI
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        PluginManager.shared.load(pluginTypes: [TopStoriesPlugin.self])
+        PluginManager.shared.load(pluginTypes: [TopStoriesPlugin.self, NewsDetailPlugin.self])
 
         return true
     }

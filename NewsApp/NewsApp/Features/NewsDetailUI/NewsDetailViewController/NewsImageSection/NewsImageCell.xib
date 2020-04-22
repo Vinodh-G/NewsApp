@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsImageCell" id="jXZ-Hy-dzp" customClass="NewsImageCell" customModule="NewsDetailsUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="311"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7zT-EZ-L47">
+                <rect key="frame" x="0.0" y="0.0" width="315" height="311"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-OY-jyD">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="311"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-Dj-o0c">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="311"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dVF-bQ-pSl">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="311"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YI0-Ij-FeX">
+                        <rect key="frame" x="20" y="20" width="275" height="271"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3K-7P-svC">
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="208"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sf-He-2en">
+                                <rect key="frame" x="0.0" y="216" width="275" height="16.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZT-IU-FwQ">
+                                <rect key="frame" x="0.0" y="240.5" width="275" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eIf-Dj-o0c" firstAttribute="leading" secondItem="PWP-OY-jyD" secondAttribute="leading" id="1gp-X6-PX7"/>
+                    <constraint firstAttribute="bottom" secondItem="PWP-OY-jyD" secondAttribute="bottom" id="3O5-US-aw7"/>
+                    <constraint firstItem="PWP-OY-jyD" firstAttribute="leading" secondItem="7zT-EZ-L47" secondAttribute="leading" id="8qD-LR-xQD"/>
+                    <constraint firstItem="YI0-Ij-FeX" firstAttribute="top" secondItem="7zT-EZ-L47" secondAttribute="top" constant="20" id="QeM-A3-5i4"/>
+                    <constraint firstItem="PWP-OY-jyD" firstAttribute="top" secondItem="7zT-EZ-L47" secondAttribute="top" id="VY0-D8-ckj"/>
+                    <constraint firstItem="YI0-Ij-FeX" firstAttribute="leading" secondItem="7zT-EZ-L47" secondAttribute="leading" constant="20" id="Wev-kn-0xb"/>
+                    <constraint firstAttribute="bottom" secondItem="YI0-Ij-FeX" secondAttribute="bottom" constant="20" id="awH-2t-K9q"/>
+                    <constraint firstItem="eIf-Dj-o0c" firstAttribute="top" secondItem="PWP-OY-jyD" secondAttribute="top" id="kXk-3v-3C3"/>
+                    <constraint firstAttribute="trailing" secondItem="PWP-OY-jyD" secondAttribute="trailing" id="nWv-Oo-a91"/>
+                    <constraint firstItem="eIf-Dj-o0c" firstAttribute="trailing" secondItem="PWP-OY-jyD" secondAttribute="trailing" id="o8Z-lQ-7mA"/>
+                    <constraint firstAttribute="trailing" secondItem="YI0-Ij-FeX" secondAttribute="trailing" constant="20" id="qNY-8F-T3P"/>
+                    <constraint firstItem="eIf-Dj-o0c" firstAttribute="bottom" secondItem="PWP-OY-jyD" secondAttribute="bottom" id="sho-4n-2aW"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="315" height="311"/>
+            <connections>
+                <outlet property="blurView" destination="eIf-Dj-o0c" id="eNJ-ed-Jot"/>
+                <outlet property="newsImageView" destination="PWP-OY-jyD" id="RtV-v0-EP5"/>
+                <outlet property="timeStampLabel" destination="0sf-He-2en" id="edc-3T-Yz2"/>
+                <outlet property="titleLabel" destination="hZT-IU-FwQ" id="2bl-SD-R3f"/>
+            </connections>
+            <point key="canvasLocation" x="118.11594202898551" y="103.45982142857143"/>
+        </collectionViewCell>
+    </objects>
+</document>

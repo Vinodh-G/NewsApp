@@ -19,6 +19,7 @@ protocol NewsCellViewAPI {
 }
 
 struct NewsCellModel: CellModel, NewsCellViewAPI {
+    let cellID: String
     var cellType: String
     private let newsItem: NewsPageResponse.NewsItem
     private let imageURLCache: [String: String]
@@ -28,6 +29,7 @@ struct NewsCellModel: CellModel, NewsCellViewAPI {
         self.newsItem = newsItem
         self.cellType = cellType.rawValue
         self.imageURLCache = NewsCellModel.newsImageURLCache(multimedia: newsItem.multimedia)
+        cellID = UUID().uuidString
     }
 
     var title: String {

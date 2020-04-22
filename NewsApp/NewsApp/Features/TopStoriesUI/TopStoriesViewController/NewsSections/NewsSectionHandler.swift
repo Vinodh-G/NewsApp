@@ -73,11 +73,10 @@ class NewsSectionHandler: SectionHandler {
         }
     }
 
-    func supplementaryView(collectionView: UICollectionView,
-                           kind: String,
-                           indexPath: IndexPath,
-                           headerViewModel: HeaderViewModel) -> UICollectionReusableView? {
-
+    func supplementaryViewProvider(_ collectionView: UICollectionView,
+                                   _ kind: String,
+                                   _ indexPath: IndexPath,
+                                   _ headerViewModel: HeaderViewModel) -> UICollectionReusableView? {
         switch kind {
         case NewsSectionHandler.sectionHeaderKind:
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -90,12 +89,11 @@ class NewsSectionHandler: SectionHandler {
             return nil
         }
     }
-
 }
 
 extension NewsSectionHandler {
-    func collectionLayout(for sectionModel: SectionModel,
-                          environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
+
+    func sectionLayoutProvider(_ sectionModel: SectionModel, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
         guard let newsCatType = (sectionModel as? NewsSectionModel)?.categoryType else { return nil }
         let layoutType = NewsLayoutHandler.layoutType(for: newsCatType)
         return NewsLayoutHandler.sectionLayout(layoutType: layoutType)
