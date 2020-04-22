@@ -19,6 +19,13 @@ enum NewsSectionLayoutType: String {
 }
 
 class NewsLayoutHandler {
+
+    var layoutCache: [String: NSCollectionLayoutSection] = [:]
+
+    init() {
+        updateLayoutCache()
+    }
+
     static func layoutType(for newsCatType: String) -> NewsSectionLayoutType {
         switch newsCatType {
         case TopStoriesUIConfig.worldNewsCategory.type:
@@ -38,31 +45,9 @@ class NewsLayoutHandler {
         }
     }
 
-    static func sectionLayout(layoutType: NewsSectionLayoutType) -> NSCollectionLayoutSection? {
+    func sectionLayout(layoutType: NewsSectionLayoutType) -> NSCollectionLayoutSection? {
 
-        var sectionLayout: NSCollectionLayoutSection?
-        switch layoutType {
-        case .fullWidthCard:
-            let groupLayout = fullWidthItemLayout()
-            sectionLayout = NSCollectionLayoutSection(group: groupLayout)
-            sectionLayout?.orthogonalScrollingBehavior = .groupPaging
-
-        case .card:
-            let groupLayout = cardItemLayout()
-            sectionLayout = NSCollectionLayoutSection(group: groupLayout)
-            sectionLayout?.orthogonalScrollingBehavior = .groupPaging
-
-        case .list:
-            let groupLayout = listItemLayout()
-            sectionLayout = NSCollectionLayoutSection(group: groupLayout)
-            sectionLayout?.orthogonalScrollingBehavior = .groupPaging
-
-        case .groupedList:
-            let groupLayout = groupedListItemLayout()
-            sectionLayout = NSCollectionLayoutSection(group: groupLayout)
-            sectionLayout?.orthogonalScrollingBehavior = .groupPaging
-        }
-
+        let sectionLayout: NSCollectionLayoutSection? = layoutCache[layoutType.rawValue]
         let headerSize = NSCollectionLayoutSize(widthDimension: AppSpacing.SectionHeader.headerWidth,
                                                      heightDimension: AppSpacing.SectionHeader.headerHeight)
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
@@ -73,6 +58,28 @@ class NewsLayoutHandler {
         sectionLayout?.contentInsets = AppSpacing.defaultSectionContentInset
 
         return sectionLayout
+    }
+
+    private func updateLayoutCache() {
+        let fullWidthGroupLayout = NewsLayoutHandler.fullWidthItemLayout()
+        let fullWidthSectionLayout = NSCollectionLayoutSection(group: fullWidthGroupLayout)
+        fullWidthSectionLayout.orthogonalScrollingBehavior = .groupPaging
+        layoutCache[NewsSectionLayoutType.fullWidthCard.rawValue] = fullWidthSectionLayout
+
+        let itemListGroupLayout = NewsLayoutHandler.listItemLayout()
+        let itemListSectionLayout = NSCollectionLayoutSection(group: itemListGroupLayout)
+        itemListSectionLayout.orthogonalScrollingBehavior = .groupPaging
+        layoutCache[NewsSectionLayoutType.list.rawValue] = itemListSectionLayout
+
+        let cardGroupLayout = NewsLayoutHandler.cardItemLayout()
+        let cardSectionLayout = NSCollectionLayoutSection(group: cardGroupLayout)
+        cardSectionLayout.orthogonalScrollingBehavior = .groupPaging
+        layoutCache[NewsSectionLayoutType.card.rawValue] = cardSectionLayout
+
+        let groupedListLayout = NewsLayoutHandler.groupedListItemLayout()
+        let groupedListSectionLayout = NSCollectionLayoutSection(group: groupedListLayout)
+        groupedListSectionLayout.orthogonalScrollingBehavior = .groupPaging
+        layoutCache[NewsSectionLayoutType.groupedList.rawValue] = groupedListSectionLayout
     }
 
     static func fullWidthItemLayout() -> NSCollectionLayoutGroup {
@@ -108,7 +115,7 @@ class NewsLayoutHandler {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: AppSpacing.ListCell.groupWidth,
-                                               heightDimension: .absolute(120 * 3))
+                                               heightDimension: .absolute(130 * 3))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitem: item,
                                                      count: 3)

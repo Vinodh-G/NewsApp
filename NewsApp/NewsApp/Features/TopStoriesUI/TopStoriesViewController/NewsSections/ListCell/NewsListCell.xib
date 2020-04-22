@@ -10,32 +10,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsListCell" id="Nr9-Yr-qhn" customClass="NewsListCell" customModule="TopStoriesUI" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="336" height="135"/>
+            <rect key="frame" x="0.0" y="0.0" width="336" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zyw-uY-zwD">
-                <rect key="frame" x="0.0" y="0.0" width="336" height="135"/>
+                <rect key="frame" x="0.0" y="0.0" width="336" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btX-mg-0ee">
-                        <rect key="frame" x="8" y="8" width="320" height="119"/>
+                        <rect key="frame" x="8" y="8" width="320" height="114"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ule-4c-sQC">
-                        <rect key="frame" x="8" y="8" width="320" height="119"/>
+                        <rect key="frame" x="8" y="8" width="320" height="114"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Oh-P0-Htz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BBJ-Y7-EVH">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="119"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="114"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="xuK-Kc-kKo"/>
+                                            <constraint firstAttribute="width" constant="114" id="xuK-Kc-kKo"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qoA-5K-lDF">
-                                        <rect key="frame" x="98" y="0.0" width="222" height="119"/>
+                                        <rect key="frame" x="122" y="0.0" width="198" height="114"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xry-QU-epR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xry-QU-epR">
                                                 <rect key="frame" x="0.0" y="44" width="32" height="23.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
@@ -50,7 +50,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="SED-Rk-jRc">
-                                                <rect key="frame" x="0.0" y="92" width="198" height="19"/>
+                                                <rect key="frame" x="0.0" y="92" width="185" height="14"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>

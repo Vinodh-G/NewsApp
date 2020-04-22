@@ -49,11 +49,6 @@ class TopStoriesViewController: VSCollectionViewController {
         super.viewDidAppear(animated)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-
     func newsSectionHandler() -> SectionHandler {
         return NewsSectionHandler(parentViewController: self.parent)
     }

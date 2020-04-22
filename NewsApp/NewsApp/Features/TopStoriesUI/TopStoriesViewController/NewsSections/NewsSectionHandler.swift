@@ -17,8 +17,12 @@ class NewsSectionHandler: SectionHandler {
 
     static let sectionHeaderKind = "section-header-element-kind"
     weak var parentViewController: UIViewController?
+
+    let layoutHandler: NewsLayoutHandler
+
     init(parentViewController: UIViewController?) {
         self.parentViewController = parentViewController
+        layoutHandler = NewsLayoutHandler()
     }
     
     func registerCells(for collectionView: UICollectionView) {
@@ -96,7 +100,7 @@ extension NewsSectionHandler {
     func sectionLayoutProvider(_ sectionModel: SectionModel, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
         guard let newsCatType = (sectionModel as? NewsSectionModel)?.categoryType else { return nil }
         let layoutType = NewsLayoutHandler.layoutType(for: newsCatType)
-        return NewsLayoutHandler.sectionLayout(layoutType: layoutType)
+        return layoutHandler.sectionLayout(layoutType: layoutType)
     }
 }
 
@@ -113,5 +117,12 @@ extension NewsSectionHandler {
         navController.present(detailViewController,
                               animated: true,
                               completion: nil)
+    }
+
+    func willDisplayCell(_ collectionView: UICollectionView,
+                         _ indexPath: IndexPath,
+                         _ cell: UICollectionViewCell,
+                         _ cellModel: CellModel) {
+        cell.layoutIfNeeded()
     }
 }

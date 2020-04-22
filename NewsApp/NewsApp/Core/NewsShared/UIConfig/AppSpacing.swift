@@ -40,7 +40,7 @@ public struct AppSpacing {
         public static let itemHeight: NSCollectionLayoutDimension = .fractionalHeight(1.0)
 
         public static let groupWidth: NSCollectionLayoutDimension = .fractionalWidth(0.86)
-        public static let groupHeight: NSCollectionLayoutDimension = .absolute(120)
+        public static let groupHeight: NSCollectionLayoutDimension = .absolute(130)
         public static let contentInset = NSDirectionalEdgeInsets(top: 0, leading: 0,
                                                                  bottom: 0, trailing: 0)
     }
