@@ -61,6 +61,7 @@ This framework is from feature layer, it provides the UI for News Details Screen
 Since the design pattern is quite similar to TopStoriesViewController, I have not shown the class diagram specific to NewsDetailsViewController.
 
 
-
+A quick snap shot of test coverage for newsapp targets.
+![](Images/Test_coverage.png)
 
 
