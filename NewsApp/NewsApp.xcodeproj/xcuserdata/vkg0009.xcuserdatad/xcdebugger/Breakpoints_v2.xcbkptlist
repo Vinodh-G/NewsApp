@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF320391-E382-40F5-AB93-E1AB6169D445"
+            uuid = "47DF2C5B-E12D-4973-9A26-3F922CDC34CE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Features/TopStoriesUI/TopStoriesViewController/NewsSections/NewsSectionModel.swift"
+            filePath = "TopStoriesTests/TopStoriesViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "init(categoryType:categoryName:newsItems:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "testCollectionDataSectionCountForValidData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,12 +8,14 @@
 
 import UIKit
 
-public protocol SectionHandler: SectionLayoutInfo, SectionHeaderFooter, SectionDelegateHandler {
-    var type: String { get }
-    func registerCells(for collectionView: UICollectionView)
-    func cellProvider(_ collectionView: UICollectionView,
-                      _ indexPath: IndexPath,
-                      _ cellModel: CellModel) -> UICollectionViewCell
+public protocol SectionDelegateHandler: AnyObject {
+    func didSelect(_ collectionView: UICollectionView,
+                   _ indexPath: IndexPath,
+                   _ cellModel: CellModel)
+    func willDisplayCell(_ collectionView: UICollectionView,
+                         _ indexPath: IndexPath,
+                         _ cell: UICollectionViewCell,
+                         _ cellModel: CellModel)
 }
 
 public protocol SectionHeaderFooter: AnyObject {
@@ -23,6 +25,19 @@ public protocol SectionHeaderFooter: AnyObject {
                                    _ headerViewModel: HeaderViewModel) -> UICollectionReusableView?
 }
 
+public protocol SectionLayoutInfo: AnyObject {
+    func sectionLayoutProvider(_ sectionModel: SectionModel,
+                               _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection?
+}
+
+public protocol SectionHandler: SectionLayoutInfo, SectionHeaderFooter, SectionDelegateHandler {
+    var type: String { get }
+    func registerCells(for collectionView: UICollectionView)
+    func cellProvider(_ collectionView: UICollectionView,
+                      _ indexPath: IndexPath,
+                      _ cellModel: CellModel) -> UICollectionViewCell
+}
+
 public extension SectionHeaderFooter {
     func supplementaryViewProvider(_ collectionView: UICollectionView,
                                    _ kind: String,
@@ -30,21 +45,6 @@ public extension SectionHeaderFooter {
                                    _ headerViewModel: HeaderViewModel) -> UICollectionReusableView? {
         return nil
     }
-}
-
-public protocol SectionLayoutInfo: AnyObject {
-    func sectionLayoutProvider(_ sectionModel: SectionModel,
-                               _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection?
-}
-
-public protocol SectionDelegateHandler: AnyObject {
-    func didSelect(_ collectionView: UICollectionView,
-                   _ indexPath: IndexPath,
-                   _ cellModel: CellModel)
-    func willDisplayCell(_ collectionView: UICollectionView,
-                         _ indexPath: IndexPath,
-                         _ cell: UICollectionViewCell,
-                         _ cellModel: CellModel)
 }
 
 public extension SectionDelegateHandler {

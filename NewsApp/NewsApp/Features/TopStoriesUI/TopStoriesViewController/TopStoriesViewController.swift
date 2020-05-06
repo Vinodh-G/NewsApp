@@ -80,6 +80,7 @@ extension TopStoriesViewController {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (context) in
             self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.reloadData()
         }, completion: nil)
     }
 }
