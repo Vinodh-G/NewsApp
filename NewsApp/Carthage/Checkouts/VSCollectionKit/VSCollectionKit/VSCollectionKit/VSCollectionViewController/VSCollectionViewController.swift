@@ -24,6 +24,7 @@ open class VSCollectionViewController: UIViewController {
         configureLayoutProvider()
         configureDataSource()
         configureDelegate()
+        overrideUserInterfaceStyle = .light
     }
 
     open func willAddSectionControllers() { }

@@ -34,5 +34,6 @@ class MainViewController: UIViewController {
 
         view.addSubview(tabBarController.view)
         addChild(tabBarController)
+        tabBarController.overrideUserInterfaceStyle = .light
     }
 }
